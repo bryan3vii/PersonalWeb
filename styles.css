@@ -1,0 +1,531 @@
+/* Styles for first html  program */
+/* Bryan Mendoza */
+/* Jan 23, 2024 */
+body {
+    font-family: Libre 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+    margin: 0;
+    padding: 1em;
+    background-color:#232d3f;
+    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out;
+}
+
+header {
+    background-color:#969aa4;
+    color: #232d3f;
+    text-align: center;
+    padding: 1em;
+    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out;
+}
+
+footer {
+    background-color: #969aa4;
+    color: #232d3f;
+    text-align: center;
+    padding: 1em;
+    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out;
+}
+.bio-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; 
+}
+
+.bio-container {
+    display: flex;
+    align-items: center;
+}
+.bio-container img {
+    width: 275px;
+    height: 250px;
+    border-radius: 10px; /* Add a border radius for a nicer look */
+}
+
+.bio-container img {
+    margin-right: 20px; /* Optional margin for spacing between image and text */
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 1ex;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #232d3f;
+    font-weight: bold;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: 2px solid transparent; /* Add border with transparent color */
+    border-radius: 5px; /* Rounded corners */
+    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out, border 0.3s ease-in-out; /* Include border in transition */
+}
+nav a:hover {
+    background-color: #969aa4; /* Button background color on hover */
+    color: #fff; /* Text color on hover */
+    border-color: #fff; /* Border color on hover */
+}
+
+section.content {
+    padding: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#triforce {
+    margin: 50px auto;
+    width: 200px;
+    height: 200px;
+}
+
+#triangle {
+    content: '';
+    position: relative;
+    width: 0px;
+    height: 0px;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 104px solid #FFBC00;
+}
+
+#triangle:before {
+    content: '';
+    position: absolute;
+    display: block;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 104px solid #FFBC00;
+    top: 104px;
+    left: -120px;
+}
+
+#triangle:after {
+    content: '';
+    position: absolute;
+    display: block;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 104px solid #FFBC00;
+    top: 104px;
+}
+
+#shadow {
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: relative;
+    z-index: -1;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 104px solid #FF8C00;
+    transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    top: 27px;
+    left: -73px;
+}
+
+#shadow:before {
+    content: '';
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 104px solid #FF8C00;
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+}
+
+#shadow:after {
+    content: '';
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 104px solid #FF8C00;
+    position: absolute;
+    display: block;
+    top: -104px;
+    left: 60px;
+}
+.dark-mode-toggle-container {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+/* Styles for the dark mode toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    border-radius: 17px; /* Half of the height to make it round */
+    overflow: hidden; /* Ensures the border-radius works as intended */
+}
+
+/* The switch - the box around the slider */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #232d3f;
+    border-radius: 17px; /* Half of the height to make it round */
+    -webkit-transition: .15s;
+    transition: .15s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%; /* Make it round */
+    -webkit-transition: .15s;
+    transition: .15s;
+}
+
+input:checked + .slider {
+    background-color: #b5b7bf;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #000;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/*Contact page*/
+body.contact-page {
+    font-family: Libre 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+}
+
+body.contact-page section.content {
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+body.contact-page section.content h1 {
+    font-size: 2em; 
+}
+
+body.contact-page section.content p {
+    font-size: 1.2em; 
+    margin-bottom: 15px; 
+}
+
+body.contact-page .dark-mode-toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+/* DARK MODE STYLES */
+body {
+    color: #969aa4;
+    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out;
+}
+
+body.dark {
+    color: #fff;
+    font-family: Libre 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+    margin: 0;
+    padding: 1em;
+    background-color: #808591;
+    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out;
+}
+
+body.dark header {
+    background-color:#5f6574;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out;
+}
+
+body.dark footer {
+    background-color: #5f6574;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out;
+}
+body.dark nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: 2px solid transparent; /* Add border with transparent color */
+    border-radius: 5px; /* Rounded corners */
+    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out, border 0.3s ease-in-out; /* Include border in transition */
+}
+body.dark #darkModeToggle:before {
+    transform: translateY(100%);
+    opacity: 1;
+}
+
+body.dark #darkModeToggle:after {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* hobby nav */
+nav-hobby {
+    text-align: center;
+}
+body.dark nav a:hover {
+    background-color: #232d3f; /* Button background color on hover in dark mode */
+    color: #aab3cd; /* Text color on hover in dark mode */
+    border-color: #232d3f; /* Border color on hover in dark mode */
+}
+
+nav-hobby ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav-hobby li {
+    display: inline-block;
+    margin: 10px;
+}
+
+nav-hobby a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #232d3f; /* Button background color */
+    color: #969aa4; /* Button text color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+
+nav-hobby a:hover {
+    background-color: #c6ccdd; /* Button background color on hover */ /******* HERE */
+    color: #232d3f; /* Text color on hover in dark mode */
+
+}
+
+/* hobby page dark mode*/ 
+body.dark nav-hobby {
+    text-align: center;
+}
+
+body.dark nav-hobby ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+body.dark nav-hobby li {
+    display: inline-block;
+    margin: 10px;
+}
+
+body.dark nav-hobby a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #969aa4; /* Button background color */
+    color: #232d3f; /* Button text color */ /*changeee//*/
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+
+body.dark nav-hobby a:hover {
+    background-color: #232d3f; /* Button background color on hover */ /******* HERE */
+    color: #969aa4; /* Button text color */
+    transition: background-color 0.3s;
+
+}
+
+/* projects page */
+nav-projects {
+    text-align: center;
+}
+
+nav-projects ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav-projects li {
+    display: inline-block;
+    margin: 10px;
+}
+
+nav-projects a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #232d3f; /* Button background color */
+    color: #969aa4; /* Button text color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+
+nav-projects a:hover {
+    background-color: #c6ccdd; /* Button background color on hover */ /******* HERE */
+    color: #232d3f; /* Text color on hover in dark mode */
+}
+
+/* projects page dark mode*/ 
+body.dark nav-projects {
+    text-align: center;
+}
+
+body.dark nav-projects ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+body.dark nav-projects li {
+    display: inline-block;
+    margin: 10px;
+}
+
+body.dark nav-projects a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #969aa4; /* Button background color */
+    color: #232d3f; /* Button text color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+
+body.dark nav-projects a:hover {
+    background-color:#232d3f; /* Button background color on hover */
+    color: #969aa4; /* Text color on hover in dark mode */
+    border-color: #232d3f; /* Border color on hover in dark mode */
+
+}
+
+/* hobbies page, Hobby #1 */
+.content {
+    text-align: center;
+}
+
+.thumbnail-container {
+    display: inline-block;
+    position: relative;
+}
+
+.thumbnail-img {
+    width: 700px;
+    height: 400px;
+    border: 2px solid #333; 
+    border-radius: 10px; 
+    transition: filter 0.3s ease; 
+}
+
+.thumbnail-img:hover {
+    filter: brightness(140%); 
+}
+
+.center-text {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0%; 
+}
+
+
+/* collage page */
+.collage-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.collage-img {
+    width: 18%; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 15px; /* Adjust spacing between images */
+}
+
+.back-button {
+    display: table-header-group;
+    position: fixed;
+    top: 520px; /* Adjust the top position as needed */
+    right: 20px; /* Adjust the right position as needed */
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #969aa4; /* Button background color */
+    color: #000; /* Button text color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+
+
+.back-button:hover {
+    background-color:  #5f6574	;
+    color: #fff; /* Text color on hover */
+}
+
+body.dark .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #232d3f; 
+    color: #969aa4; 
+    border-radius: 5px; 
+    transition: background-color 0.3s;
+}
+body.dark .back-button:hover {
+    background-color:  #969aa4; 
+    color: #fff; 
+
+}
+
+

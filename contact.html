@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        .bio-container {
+            float: left;
+            margin-right: -1200px;
+            margin-top: 50px;
+        }
+
+        .content {
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body class="contact-page">
+    <body class="contact-page">
+        <div id="preloader">
+            <div id="triforce">
+                <div id="triangle" class="shadow">
+                    <div id="shadow"></div>
+                </div>
+            </div>
+        </div>
+    <header>
+        <h1>Contact Info</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dark mode toggle switch -->
+    <div class="dark-mode-toggle-container hidden">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    
+    <div class="bio-container">
+        <img src="selfie.png" alt="Picture">
+    </div>
+
+    <!-- Contact information -->
+    <section class="content">
+        <h1>Contact Information:</h1>
+        <div class="contact-item">
+            <i class="material-icons">mail</i>
+            <p><strong>School Email:</strong> bryan3vii@nmsu.edu</p>
+        </div>
+        <div class="contact-item">
+            <i class="material-icons">mail</i>
+            <p><strong>Personal Email:</strong> bryan3vii@gmail.com</p>
+        </div>
+        <div class="contact-item">
+            <i class="material-icons">phone</i>
+            <p><strong>Phone:</strong> (575) 312-6636</p>
+        </div>
+        <div class="contact-item">
+            <i class="material-icons">link</i>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/bryan3vii/" target="_blank" style="color: #FFF8DC;">https://www.linkedin.com/in/bryan3vii/</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&reg; Bryan Mendoza | Spring 2024 (CS382) </p>
+    </footer>
+
+    <!-- Dark mode toggle script -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+        if (isDarkMode) {
+            body.classList.add('dark');
+            darkModeToggle.checked = true;
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            localStorage.setItem('darkMode', body.classList.contains('dark'));
+        });
+    </script>
+    <!-- Preloader script -->
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('preloader').style.display = 'none';
+                document.querySelector('.dark-mode-toggle-container').style.display = 'block';
+            }, 500);
+        };
+    </script>
+</body>
+</html>

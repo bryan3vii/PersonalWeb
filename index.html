@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan - Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #GIF {
+            display: none;
+            cursor: pointer;
+            max-width: 60px;
+            max-height: 60px;
+            margin: 20px auto;
+            transition: opacity 1.0s ease-in-out; 
+        }
+        #name:hover + #GIF {
+            display: block;
+            opacity: 1; 
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div id="triforce">
+            <div id="triangle" class="shadow">
+                <div id="shadow"></div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1 id="name">Bryan Mendoza</h1>
+            <img src="https://media.giphy.com/media/Ri98Ht4Q9hczOeHC1E/giphy.gif" alt="Hello" id="GIF">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="hobbies.html">Hobbies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dark mode toggle switch -->
+    <div class="dark-mode-toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <section class="landing">
+        <div class="bio-container">
+            <img src="selfie.png" alt="Picture" width="275" height="250">
+            <p>
+                I am 23 years old, currently a senior in Computer Science at New Mexico State University. As a dedicated student,
+                I am driven by a strong work ethic, a passion for problem-solving, and an unwavering commitment to excellence in 
+                every project. My academic journey has equipped me with a solid foundation in computer science, and I am eager to 
+                apply my skills and knowledge to real-world challenges. Outside of academics, I am an avid enthusiast of various hobbies.
+                I find great joy in exploring the outdoors, whether it's hiking through scenic trails or embarking on adventurous camping trips. 
+                Additionally, I am deeply passionate about photography, capturing the beauty of nature and special moments in life through my lens. 
+                In my leisure time, I enjoy immersing myself in books, particularly science fiction and fantasy novels, which fuel my imagination 
+                and creativity. These hobbies not only provide me with relaxation and rejuvenation but also inspire me to approach problems from 
+                different perspectives, fostering my growth as a well-rounded individual
+            </p>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&reg; Bryan Mendoza | Spring 2024 (CS382) </p>
+        </div>
+    </footer>
+<!-- Dark mode toggle script -->
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) {
+        body.classList.add('dark');
+        darkModeToggle.checked = true;
+    }
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        localStorage.setItem('darkMode', body.classList.contains('dark'));
+    });
+</script>
+    <!-- Preloader script -->
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('preloader').style.display = 'none';
+                document.querySelector('.dark-mode-toggle-container').style.display = 'block';
+            }, 1000); 
+        };
+    </script>
+    <!-- Gif script -->
+    <script>
+        // The GIF will show/hide when clicking on the name
+        document.getElementById('name').addEventListener('click', function() {
+            GIF();
+        });
+
+        function GIF() {
+            var GIF = document.getElementById('GIF');
+            GIF.style.display = (GIF.style.display === 'none' || GIF.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

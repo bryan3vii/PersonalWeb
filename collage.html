@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collage Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="preloader">
+        <div id="triforce">
+            <div id="triangle" class="shadow">
+                <div id="shadow"></div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <h1>Hobbies</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Separate navigation section for hobbies -->
+        <nav-hobby>
+            <ul>
+                <li><a href="hobbies.html">Hobby 1</a></li>
+                <li><a href="hobby2.html">Hobby 2</a></li>
+                <li><a href="hobby3.html">Hobby 3</a></li>
+                <li><a href="hobby4.html">Hobby 4</a></li>
+            </ul>
+        </nav-hobby>
+    </header>
+    <!-- Dark mode toggle switch in the top right -->
+    <div class="dark-mode-toggle-container hidden">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <section class="collage-content">
+        <img src="bike.jpg" alt="Bike" class="collage-img" style="max-width: 200px; max-height: 300px;">
+        <img src="Team.png" alt="NMSU eSports" class="collage-image" style="max-width: 500px; max-height: 500px;" >
+        <img src="legocar.png" alt="Lego Car" class="collage-image" style="max-width: 200px; max-height: 300px;" >
+        <img src="legoiron.png" alt="Lego IronMan" class="collage-image" style="max-width: 200px; max-height: 300px;" >
+        <img src="dreamcar.png" alt="Dream Car" class="collage-image" style="max-width: 200px; max-height: 00px;" >
+        <a href="index.html" class="back-button">Back to Hobbies</a>
+    </section>
+    <footer>
+        <p>&reg; Bryan Mendoza | Spring 2024 (CS382) </p>
+    </footer>
+
+<!-- Dark mode toggle script -->
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // Check if the user's dark mode preference is stored in local storage
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+    // Set the initial dark mode state based on the stored preference
+    if (isDarkMode) {
+        body.classList.add('dark');
+        darkModeToggle.checked = true;
+    }
+
+    // Toggle dark mode on click and update the local storage
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        localStorage.setItem('darkMode', body.classList.contains('dark'));
+    });
+</script>
+    <!-- Preloader script -->
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('preloader').style.display = 'none';
+                // Show dark mode toggle after preloader is hidden
+                document.querySelector('.dark-mode-toggle-container').style.display = 'block';
+            }, 500); 
+        };
+    </script>
+</body>
+</html>

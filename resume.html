@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan - Resume</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your existing stylesheet -->
+</head>
+<body>
+    <body>
+        <div id="preloader">
+            <div id="triforce">
+                <div id="triangle" class="shadow">
+                    <div id="shadow"></div>
+                </div>
+            </div>
+        </div>
+    <header>
+        <div class="container">
+            <h1>Bryan Mendoza</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="hobbies.html">Hobbies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dark mode toggle switch -->
+    <div class="dark-mode-toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <section class="content">
+        <h1>Resume</h1>
+        <iframe src="BryanM_Resume.pdf" width="100%" height="600px" style="border: none;"></iframe>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&reg; Bryan Mendoza | Spring 2024 (CS382) </p>
+        </div>
+    </footer>
+<!-- Dark mode toggle script -->
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) {
+        body.classList.add('dark');
+        darkModeToggle.checked = true;
+    }
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        localStorage.setItem('darkMode', body.classList.contains('dark'));
+    });
+</script>
+    <!-- Preloader script -->
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('preloader').style.display = 'none';
+                document.querySelector('.dark-mode-toggle-container').style.display = 'block';
+            }, 500); 
+        };
+    </script>
+</body>
+</html>
