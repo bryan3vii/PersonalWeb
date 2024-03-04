@@ -1,13 +1,13 @@
 <!-- CS382 Personal Web -->
 <!-- February 06, 2024 -->
 <!-- Bryan Mendoza -->
-<!-- hobbies page 3 -->
+<!-- projects page 3 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bryan - Hobbies</title>
+    <title>Bryan - Projects</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
         </div>
     </div>
     <header>
-        <h1>Hobbies</h1>
+        <h1>Projects</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -28,39 +28,38 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <nav-hobby>
-            <ul>
-                <li><a href="hobbies.html">Hobby 1</a></li>
-                <li><a href="hobby2.html">Hobby 2</a></li>
-                <li><a href="hobby3.html">Hobby 3</a></li>
-                <li><a href="hobby4.html">Hobby 4</a></li>
-                <li><a href="collage.html" class="collage-button">Collage</a></li>
-            </ul>
-        </nav-hobby>
+                <!-- Separate navigation section for hobbies -->
+                <nav-projects>
+                    <ul>
+                        <li><a href="projects.html">Projects 1</a></li>
+                        <li><a href="Projects2.html">Projects 2</a></li>
+                        <li><a href="Projects3.html">Projects 3</a></li>
+                    </ul>
+                </nav-projects>
+            </header>
     </header>
-    <!-- dark mode -->
+
+    <!-- Dark mode toggle switch in the top right -->
     <div class="dark-mode-toggle-container hidden">
         <label class="switch">
             <input type="checkbox" id="darkModeToggle">
             <span class="slider round"></span>
         </label>
     </div>
+
     <section class="content">
-        <div class="thumbnail-container">
-            <a href="https://www.youtube.com/watch?v=NDrwslBXB7o&ab_channel=IsleofManTTRaces" target="_blank">
-                <img src="https://img.youtube.com/vi/NDrwslBXB7o/maxresdefault.jpg
-                " alt="Video Thumbnail" class="thumbnail-img">
-            </a>
-        </section>
-        </div>   
+        <h1>CS370 Compiler</h1>
+        <h2>Code Image</h2>
+        <img src="Code.png" alt="Compiler yacc code" class="project-image" style="max-width: 1000px; max-height: 1000px;">
+        <h2>Output example</h2>
+        <img src="Output.png" alt="Output code" class="project-image" style="max-width: 1000px; max-height: 1000px;">
     </section>
-    <h1><p class="center-text">I enjoy riding and watching motorcycle content of all varieties!</p>
-    </h1>
+
     <footer>
         <p>&reg; Bryan Mendoza | Spring 2024 (CS382) </p>
     </footer>
 
- <!-- Dark mode toggle script -->
+<!-- Dark mode toggle script -->
 <script>
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
@@ -80,7 +79,6 @@
         localStorage.setItem('darkMode', body.classList.contains('dark'));
     });
 </script>
-
     <!-- Preloader script -->
     <script>
         window.onload = function() {
