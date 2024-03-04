@@ -146,7 +146,7 @@ function setPiece() {
     checkWinner(); // Check for a winner
 } // end of setPiece function
 
-// we need to check for a winner in the horizontal 
+// we need to check for a winner in the horizontal (FROM YOUTUBE)
 // direction, vertical direction, and both diagonals
 function checkWinner() {
     // horizontal
@@ -295,6 +295,7 @@ function resetGame() {
     document.getElementById("countdown").style.display = "none";
 } // end of resetGame function
 
+//  FROM w3schools.com
 /* Set the width of the sidebar to 250px (show it) */
 function openNav() {
     document.getElementById("mySidepanel").style.width = "250px";
