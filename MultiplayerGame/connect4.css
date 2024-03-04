@@ -1,0 +1,178 @@
+/* Connect 4 styles */
+/* Author: Bryan Mendoza */
+/* fonts */
+body {
+    font-family: 'Luminari', 'fantasy', 'cursive';
+    text-align: center;
+} 
+header {
+    position: flex;
+    width: 100%;
+    background-color: #070066;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+/* footer */
+footer {
+    position: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #070066;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+/* box around text) */
+.border_box {
+    font-size: 20px;
+    border: -50px black;
+    border-style: dashed;
+    border-radius: 100px;
+    margin: 10px;
+}
+.turn_text { 
+    font-size: 20px;
+    margin: 10px;
+    text-align: left;
+}
+/* board styles */
+#board {
+    height: 540px;
+    width: 630px;
+    background-color: #710af0;
+    border: 10px solid #070066;
+    
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* tile styles */
+.tile {
+    height: 70px;
+    width: 70px;
+    margin: 5px;
+
+    /* Circle */
+    background-color: white;
+    border-radius: 50%;
+    border: 5px solid #070066;
+}
+
+/* piece styles */
+.piece1 {
+    background-color: #eb4667;
+    animation: dropAnimation 0.1s forwards; }
+
+.piece2 {
+    background-color: #08d11d;
+    animation: dropAnimation 0.1s forwards; 
+}
+
+/* button styles */
+button {
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #070066; /* Green */
+    color: white;
+}
+/* Animation keyframes */
+@keyframes dropAnimation {
+    0% {
+        transform: translateY(-50px); /* Start position above the board */
+        opacity: 0; /* Start with opacity 0 */
+    }
+    100% {
+        transform: translateY(0); /* End position on the board */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Gradient background from w3schools*/
+html, body {
+    width: 100%;
+    height:100%;
+  }
+  
+  body {
+      background: linear-gradient(-45deg, #d63a0e, #e5540c, #e05a8b, #e0af5a);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  /* from w3schools */
+/* The sidepanel menu */
+.sidepanel {
+    height: 250px; /* Specify a height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+  }
+  
+  /* The sidepanel links */
+  .sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style the button that is used to open the sidepanel */
+  .openbtn {
+    font-family: 'Luminari', 'fantasy', 'cursive';
+    position: absolute;
+    top: 5px;
+    right:0px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #070066;
+    padding: 5px 5px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
